@@ -20,3 +20,9 @@
 .menuIcon {
   color: #ffffff;
 }
+.menuContent {
+  color: #ffffff;
+}
+.menuContent:hover {
+  color: #ffffff;
+}

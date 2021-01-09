@@ -17,6 +17,10 @@ const UseStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    "&:hover": {
+      color: "#ffffff",
+      textColor: "#ffffff",
+    },
   },
   title: {
     flexGrow: 1,
@@ -28,12 +32,6 @@ const displayMobile = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton
-          edge="start"
-          className={classes.menuButton}
-          color="inherit"
-          aria-label="menu"
-        ></IconButton>
         <Typography variant="h6" className={classes.title}>
           Nalin Agrawal
         </Typography>
@@ -73,25 +71,19 @@ const displayDesktop = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton
-          edge="start"
-          className={classes.menuButton}
-          color="inherit"
-          aria-label="menu"
-        ></IconButton>
         <Typography variant="h6" className={classes.title}>
           Nalin Agrawal
         </Typography>
-        <Button color="inherit" href="#text-buttons">
+        <Button color="inherit" href="#text-buttons" className="menuContent">
           Education
         </Button>
-        <Button color="inherit" href="#text-buttons">
+        <Button color="inherit" href="#text-buttons" className="menuContent">
           Experience
         </Button>
-        <Button color="inherit" href="#text-buttons">
+        <Button color="inherit" href="#text-buttons" className="menuContent">
           Projects
         </Button>
-        <Button color="inherit" href="#text-buttons">
+        <Button color="inherit" href="#text-buttons" className="menuContent">
           Contact
         </Button>
       </Toolbar>

@@ -1,16 +1,24 @@
 import React from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
-import Nalin from "../../images/NALIN.jpeg";
-import "./HomeScreen.css";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Nalin from "../../images/NALIN.jpeg";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import "./HomeScreen.css";
+import achievements from "../../data/AchievementsData";
+import skills from "../../data/SkillsData";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 export default function HomeScreen() {
+  const achivementsData = achievements.achievementArray;
+  const skillData = skills.skillsArray;
   return (
     <div>
+      {/* ----------------------------------------------Jumbotron------------------------------------- */}
       <AnimatedOnScroll
         animationIn="fadeIn"
         animationInDuration={5000}
@@ -23,7 +31,10 @@ export default function HomeScreen() {
             <h2 className="HomeScreenH2">
               Competitive Programmer | MERN Stack Developer | Android Developer
             </h2>
-            <p className="HomeScreenP">
+            <p
+              className="HomeScreenP"
+              style={{ marginTop: "30px", marginBottom: "10px" }}
+            >
               A competitive programmer and developer. Good grip on Data
               Structures. Self-Motivated and Enthusiastic Developer. Have
               knowledge of DS, Algorithms, Android development and Web
@@ -32,151 +43,74 @@ export default function HomeScreen() {
           </Container>
         </Jumbotron>
       </AnimatedOnScroll>
+      {/* ----------------------------------------------Achievements------------------------------------- */}
       <AnimatedOnScroll
         animationIn="slideInUp"
         animationInDuration={1000}
         isVisible={true}
       >
-        <Container className="HomeScreenSkills">
-          <h1 className="HomeScreenSkillsH1">Skills </h1>
-          <Grid container spacing={3}>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <span
-                  class="iconify HomeScreenSkillContentIcon"
-                  data-icon="file-icons:c"
-                  data-inline="false"
-                  style={{ height: "28px", width: "28px" }}
-                ></span>
-                <p className="HomeScreenSkillContentP">C++</p>
+        <Container className="HomeScreenContainer container">
+          <h1 className="HomeScreenHeading">Achievements </h1>
+          <div className="row">
+            {achivementsData.map((achievement) => (
+              <div className="HomeScreenAchievementsCard">
+                <CardActionArea
+                  className="HomeScreenAchievementsCardArea"
+                  id={achievement._id}
+                >
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h4"
+                      component="h2"
+                      style={{ fontFamily: "Trebuchet MS", fontStyle: "bold" }}
+                    >
+                      {achievement.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      {achievement.content}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    <a href={achievement.profileURL} target="_blank">
+                      VIEW PROFILE
+                    </a>
+                  </Button>
+                </CardActions>
               </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <span
-                  class="iconify HomeScreenSkillContentIcon"
-                  data-icon="teenyicons:c-solid"
-                  data-inline="false"
-                  style={{ height: "28px", width: "28px" }}
-                ></span>
-                <p className="HomeScreenSkillContentP">C</p>
+            ))}
+
+            <div className="row">
+              <div item xs={3} sm={3} className="col-sm"></div>
+            </div>
+          </div>
+        </Container>
+      </AnimatedOnScroll>
+      {/* ----------------------------------------------Skills------------------------------------- */}
+      <AnimatedOnScroll
+        animationIn="slideInUp"
+        animationInDuration={1000}
+        isVisible={true}
+      >
+        <Container className="HomeScreenContainer  container ">
+          <h1 className="HomeScreenHeading">Skills </h1>
+
+          <div className="row">
+            {skillData.map((skill) => (
+              <div item xs={3} sm={3} className="col-sm" id={skill._id}>
+                <div className="HomeScreenSkillContent">
+                  {skill.icon}
+                  <p className="HomeScreenSkillContentP">{skill.name}</p>
+                </div>
               </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <i class="fab fa-python fa-2x HomeScreenSkillContentIcon">
-                  <p className="HomeScreenSkillContentP">Python</p>
-                </i>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <i class="fab fa-java fa-2x HomeScreenSkillContentIcon">
-                  <p className="HomeScreenSkillContentP">Java</p>
-                </i>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <i class="fab fa-android fa-2x HomeScreenSkillContentIcon">
-                  <p className="HomeScreenSkillContentP">Android</p>
-                </i>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <span
-                  class="iconify HomeScreenSkillContentIcon"
-                  data-icon="simple-icons:firebase"
-                  data-inline="false"
-                  style={{ height: "28px", width: "28px" }}
-                ></span>
-                <p className="HomeScreenSkillContentP">Firebase</p>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <i class="fab fa-react fa-2x HomeScreenSkillContentIcon">
-                  <p className="HomeScreenSkillContentP">React</p>
-                </i>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <i class="fab fa-node-js fa-2x HomeScreenSkillContentIcon">
-                  <p className="HomeScreenSkillContentP">NodeJs</p>
-                </i>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <span
-                  class="iconify HomeScreenSkillContentIcon"
-                  data-icon="cib:mongodb"
-                  data-inline="false"
-                  style={{ height: "28px", width: "28px" }}
-                ></span>
-                <p className="HomeScreenSkillContentP">MongoDB</p>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <span
-                  class="iconify HomeScreenSkillContentIcon"
-                  data-icon="grommet-icons:mysql"
-                  data-inline="false"
-                  style={{ height: "28px", width: "28px" }}
-                ></span>
-                <p className="HomeScreenSkillContentP">MySQL</p>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <i class="fab fa-bootstrap fa-2x HomeScreenSkillContentIcon">
-                  <p className="HomeScreenSkillContentP">Bootstrap</p>
-                </i>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <i class="fab fa-html5 fa-2x HomeScreenSkillContentIcon">
-                  <p className="HomeScreenSkillContentP">HTML</p>
-                </i>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <i class="fab fa-css3-alt fa-2x HomeScreenSkillContentIcon">
-                  <p className="HomeScreenSkillContentP">CSS</p>
-                </i>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <i class="fab fa-github fa-2x HomeScreenSkillContentIcon">
-                  <p className="HomeScreenSkillContentP">Github</p>
-                </i>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <i class="fab fa-git-alt fa-2x HomeScreenSkillContentIcon">
-                  <p className="HomeScreenSkillContentP">Git</p>
-                </i>
-              </div>
-            </Grid>
-            <Grid item xs={3} sm={3}>
-              <div className="HomeScreenSkillContent">
-                <span
-                  class="iconify HomeScreenSkillContentIcon"
-                  data-icon="cib:heroku"
-                  data-inline="false"
-                  style={{ height: "28px", width: "28px" }}
-                ></span>
-                <p className="HomeScreenSkillContentP">Heroku</p>
-              </div>
-            </Grid>
-          </Grid>
+            ))}
+          </div>
         </Container>
       </AnimatedOnScroll>
     </div>
