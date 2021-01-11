@@ -1,11 +1,9 @@
 import React from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
-import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Nalin from "../../images/NALIN.jpeg";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
@@ -21,7 +19,7 @@ export default function HomeScreen() {
       {/* ----------------------------------------------Jumbotron------------------------------------- */}
       <AnimatedOnScroll
         animationIn="fadeIn"
-        animationInDuration={5000}
+        animationInDuration={3500}
         isVisible={true}
       >
         <Jumbotron fluid className="HomeScreenJumbotron">
@@ -94,7 +92,7 @@ export default function HomeScreen() {
       </AnimatedOnScroll>
       {/* ----------------------------------------------Skills------------------------------------- */}
       <AnimatedOnScroll
-        animationIn="slideInUp"
+        animationIn="zoomIn"
         animationInDuration={1000}
         isVisible={true}
       >

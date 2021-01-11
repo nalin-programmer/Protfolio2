@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Header from "./screens/header/Header";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
+import Projects from "./screens/projects/Projects";
 
 function App() {
   return (
@@ -11,9 +12,11 @@ function App() {
           <Header />
         </header>
         <main>
-          <Switch>
+          {/* <Switch>
             <Route path="/" component={HomeScreen} exact />
-          </Switch>
+          </Switch> */}
+          <HomeScreen />
+          <Projects />
         </main>
         <footer></footer>
       </div>
