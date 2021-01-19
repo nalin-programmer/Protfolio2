@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
+import Education from "./screens/education/Education";
 import Header from "./screens/header/Header";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
 import Projects from "./screens/projects/Projects";
@@ -17,6 +18,7 @@ function App() {
           </Switch> */}
           <HomeScreen />
           <Projects />
+          <Education />
         </main>
         <footer></footer>
       </div>

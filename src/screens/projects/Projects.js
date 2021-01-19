@@ -9,7 +9,7 @@ export default function Projects() {
     <div>
       <AnimatedOnScroll
         animationIn="bounceIn"
-        animationInDuration={3500}
+        animationInDuration={3000}
         isVisible={true}
       >
         <div className="container ProjectsContainer">
