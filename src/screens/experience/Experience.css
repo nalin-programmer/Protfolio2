@@ -1,4 +1,4 @@
-.ProjectsContainer {
+.ExperiencesContainer {
   width: 100%;
   text-align: center;
   margin-top: 25px;
@@ -6,7 +6,11 @@
   font-family: "Trebuchet MS";
 }
 
-.ProjectsHeading {
+.ExperiencesProjectCard:hover {
+  transform: translate(0px, -10px);
+}
+
+.ExperiencesHeading {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 15px;
@@ -14,7 +18,7 @@
   text-decoration-color: red;
 }
 
-.ProjectsProjectCard {
+.ExperiencesProjectCard {
   min-width: 400px;
   max-width: 50%;
   width: 45% !important;
@@ -26,21 +30,17 @@
   margin: auto;
 }
 
-.ProjectsProjectCard:hover {
-  transform: translate(0px, -10px);
-}
-
-.ProjectTitleDiv {
+.ExperienceTitleDiv {
   width: 100%;
   border-bottom: 1px solid #c9c5c5;
   min-height: 20%;
 }
 
-.ProjectsTitle {
+.ExperiencesTitle {
   font-size: 2rem;
   font-weight: bold;
 }
-.ProjectCardBodyLanguage {
+.ExperienceCardBodyLanguage {
   color: #867c7c;
   font-weight: bold;
   font-style: italic;
@@ -48,32 +48,32 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
-.ProjectCardBody {
+.ExperienceCardBody {
   height: 200px !important;
 }
-.ProjectCardLinksDiv {
+.ExperienceCardLinksDiv {
   padding: 10px 10px 10px 10px;
   position: absolute;
   bottom: 0;
   left: 0;
 }
-.ProjectCardLink {
+.ExperienceCardLink {
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 5px;
 }
-.ProjectCardLink:link {
+.ExperienceCardLink:link {
   text-decoration: none;
 }
 
-.ProjectCardLink:visited {
+.ExperienceCardLink:visited {
   text-decoration: none;
 }
 
-.ProjectCardLink:hover {
+.ExperienceCardLink:hover {
   text-decoration: none;
 }
 
-.ProjectCardLink:active {
+.ExperienceCardLink:active {
   text-decoration: none;
 }

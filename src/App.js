@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
+import ContactUs from "./screens/contactUs/ContactUs";
 import Education from "./screens/education/Education";
+import Experience from "./screens/experience/Experience";
 import Header from "./screens/header/Header";
 import HomeScreen from "./screens/homeScreen/HomeScreen";
 import Projects from "./screens/projects/Projects";
@@ -19,6 +21,8 @@ function App() {
           <HomeScreen />
           <Projects />
           <Education />
+          <Experience />
+          <ContactUs />
         </main>
         <footer></footer>
       </div>
