@@ -42,17 +42,17 @@ const displayMobile = () => {
           <ul className="dropdown-content">
             <li>
               <Button color="primary" href="#text-buttons">
-                Education
-              </Button>
-            </li>
-            <li>
-              <Button color="primary" href="#text-buttons">
                 Experience
               </Button>
             </li>
             <li>
               <Button color="primary" href="#text-buttons">
                 Projects
+              </Button>
+            </li>
+            <li>
+              <Button color="primary" href="#text-buttons">
+                Education
               </Button>
             </li>
             <li>
@@ -72,18 +72,20 @@ const displayDesktop = () => {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          Nalin Agrawal
+          <a href="#homescreen" className="HeaderA">
+            Nalin Agrawal
+          </a>
         </Typography>
-        <Button color="inherit" href="#text-buttons" className="menuContent">
-          Education
-        </Button>
-        <Button color="inherit" href="#text-buttons" className="menuContent">
+        <Button color="inherit" href="#experience" className="menuContent">
           Experience
         </Button>
-        <Button color="inherit" href="#text-buttons" className="menuContent">
+        <Button color="inherit" href="#projects" className="menuContent">
           Projects
         </Button>
-        <Button color="inherit" href="#text-buttons" className="menuContent">
+        <Button color="inherit" href="#education" className="menuContent">
+          Education
+        </Button>
+        <Button color="inherit" href="#contactus" className="menuContent">
           Contact
         </Button>
       </Toolbar>
